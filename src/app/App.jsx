@@ -9,10 +9,14 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Background image={getBackgrounds()[0]}
-                    blur={10} />
+                <Background image={getBackgrounds()[0]} blur={10} />
 
-                <Header />
+                <Header
+                    showTime={true}
+                    timeFormat='%H:%M:%s'
+                    showDate={true}
+                    dateFormat='%d.%m.%Y'
+                />
                 <Prompt />
                 <Menu />
             </div>

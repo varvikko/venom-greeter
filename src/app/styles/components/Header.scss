@@ -1,0 +1,40 @@
+
+.header {
+    color: white;
+    display: flex;
+    margin: .33rem .5rem;
+}
+
+.header-clock {
+    width: calc(100% - 2rem);
+    margin-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.hover-button {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .25rem;
+    transition: background-color 0.25s;
+    
+    &:hover {
+        background-color: #ffffff22;
+    }
+
+    &:active {
+        background-color: #ffffff11;
+    }
+}
