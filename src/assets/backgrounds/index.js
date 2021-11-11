@@ -1,5 +1,5 @@
 import background from './background.jpeg'
 
-export default [
-    background
-]
+const backgrounds = [ background ]
+
+export default backgrounds

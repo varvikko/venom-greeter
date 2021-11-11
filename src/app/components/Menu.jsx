@@ -27,9 +27,13 @@ class Menu extends React.Component {
     render() {
         return (
             <div
-                className={`menu ${this.props.open ? 'is-open' : ''}`}
+                className={`menu${this.props.open ? ' is-open' : ''}`}
                 ref={this.menuRef}
-                style={{ backdropFilter: `blur(${this.props.blur}px)` }}></div>
+                style={{
+                    backgroundColor: this.props.color,
+                    backdropFilter: `blur(${this.props.blur}px)`,
+                    boxShadow: this.props.shadow && '0 0 1rem 0 #00000022'
+                }}></div>
         )
     }
 }

@@ -16,7 +16,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='app'>
                 <Background image={getBackgrounds()[0]} blur={10} />
 
                 <Header
@@ -31,8 +31,8 @@ class App extends React.Component {
                         })
                     }
                 />
-                <Prompt />
-                <Menu open={this.state.menuOpen} blur={20} />
+                <Prompt isOther={true} showAvatar={true} />
+                <Menu open={this.state.menuOpen} blur={20} shadow={true} />
             </div>
         )
     }

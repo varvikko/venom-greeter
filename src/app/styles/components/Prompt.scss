@@ -1,0 +1,45 @@
+
+.prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prompt-avatar {
+    width: 8rem;
+    height: 8rem;
+
+    background-color: #00000022;
+    border-radius: 1e10px;
+
+    margin-bottom: 1rem;
+}
+
+.prompt-username {
+    margin-bottom: 1rem;
+}
+
+.prompt-field {
+    width: 20rem;
+
+    border: none;
+    outline: none;
+    border-radius: .33rem;
+
+    background-color: #00000022;
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    
+    padding: .75rem 1.125rem;
+
+    margin-bottom: 1rem;
+
+    &::placeholder {
+        color: white;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
