@@ -6,6 +6,14 @@ import Menu from './components/Menu'
 import { getBackgrounds } from './utils/background'
 
 class App extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            menuOpen: false
+        }
+    }
+
     render() {
         return (
             <div>
@@ -16,9 +24,15 @@ class App extends React.Component {
                     timeFormat='%H:%M:%s'
                     showDate={true}
                     dateFormat='%d.%m.%Y'
+                    toggleMenu={() =>
+                        this.setState({
+                            ...this.state,
+                            menuOpen: !this.state.menuOpen
+                        })
+                    }
                 />
                 <Prompt />
-                <Menu />
+                <Menu open={this.state.menuOpen} blur={20} />
             </div>
         )
     }

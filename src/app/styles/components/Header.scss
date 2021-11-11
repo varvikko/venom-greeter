@@ -20,21 +20,3 @@
         }
     }
 }
-
-.hover-button {
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: .25rem;
-    transition: background-color 0.25s;
-    
-    &:hover {
-        background-color: #ffffff22;
-    }
-
-    &:active {
-        background-color: #ffffff11;
-    }
-}

@@ -47,9 +47,9 @@ class Header extends React.Component {
                 </div>
 
                 <div className='header-menu-toggle-wrapper'>
-                    <div className='header-menu-toggle hover-button'>
+                    <button className='header-menu-toggle hover-button' onClick={this.props.toggleMenu}>
                         <FontAwesomeIcon icon={faBars} />
-                    </div>
+                    </button>
                 </div>
             </div>
         )
@@ -60,7 +60,8 @@ Header.propTypes = {
     showTime: PropTypes.bool,
     showDate: PropTypes.bool,
     timeFormat: PropTypes.string,
-    dateFormat: PropTypes.string
+    dateFormat: PropTypes.string,
+    toggleMenu: PropTypes.func
 }
 
 export default Header

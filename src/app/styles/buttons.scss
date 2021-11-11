@@ -1,0 +1,25 @@
+.hover-button {
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: .25rem;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    font-size: 1em;
+    
+    transition: background-color .25s;
+
+    &:hover {
+        background-color: #ffffff22;
+    }
+
+    &:active {
+        background-color: #ffffff11;
+    }
+}
