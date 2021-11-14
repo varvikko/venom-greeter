@@ -23,31 +23,34 @@ class Header extends React.Component {
     getTime() {
         const { time } = this.state
 
-        return (this.props.timeFormat || '%H:%M:%s')
-            .replace(/%H/, time.getHours())
-            .replace(/%M/, time.getMinutes())
-            .replace(/%s/, time.getSeconds().toString().padStart(2, 0))
+        return (this.props.timeFormat || 'HH:MM:SS')
+            .replace(/HH/, time.getHours().toString().padStart(2, 0))
+            .replace(/MM/, time.getMinutes().toString().padStart(2, 0))
+            .replace(/SS/, time.getSeconds().toString().padStart(2, 0))
     }
 
     getDate() {
         const { time } = this.state
-
-        return (this.props.dateFormat || '%d.&m.&Y')
-            .replace(/%d/, time.getDay())
-            .replace(/%m/, time.getMonth())
-            .replace(/%Y/, time.getFullYear())
+        
+        return (this.props.dateFormat || 'dd.mm.yyyy')
+            .replace(/dd/, time.getDate())
+            .replace(/mm/, time.getMonth())
+            .replace(/yyyy/, time.getFullYear())
     }
 
     render() {
         return (
-            <div className='header'>
-                <div className='header-clock'>
+            <div className="header">
+                <div className="header-clock">
                     <div>{this.props.showTime && this.getTime()}</div>
                     <div>{this.props.showDate && this.getDate()}</div>
                 </div>
 
-                <div className='header-menu-toggle-wrapper'>
-                    <button className='header-menu-toggle hover-button' onClick={this.props.toggleMenu}>
+                <div className="header-menu-toggle-wrapper">
+                    <button
+                        className="header-menu-toggle hover-button"
+                        onClick={this.props.toggleMenu}
+                    >
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                 </div>

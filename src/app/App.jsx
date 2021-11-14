@@ -21,9 +21,9 @@ class App extends React.Component {
 
                 <Header
                     showTime={true}
-                    timeFormat='%H:%M:%s'
+                    timeFormat='HH:MM:SS'
                     showDate={true}
-                    dateFormat='%d.%m.%Y'
+                    dateFormat='dd.mm.yyyy'
                     toggleMenu={() =>
                         this.setState({
                             ...this.state,
