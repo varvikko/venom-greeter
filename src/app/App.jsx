@@ -4,13 +4,15 @@ import Prompt from './components/Prompt'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import { getBackgrounds } from './utils/background'
+import lightdm from './utils/lightdm'
 
 class App extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            menuOpen: false
+            menuOpen: false,
+            user: lightdm.users[0]
         }
     }
 
@@ -31,7 +33,7 @@ class App extends React.Component {
                         })
                     }
                 />
-                <Prompt username="Test User" showAvatar={true} />
+                <Prompt username={this.state.user.display_name} showAvatar={true} />
                 <Menu open={this.state.menuOpen} blur={20} shadow={true} />
             </div>
         )
