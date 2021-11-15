@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight, faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 
 class Prompt extends React.Component {
     constructor(props) {
@@ -10,26 +12,40 @@ class Prompt extends React.Component {
         }
     }
 
+    login() {
+        console.log('login')
+    }
+
     render() {
         return (
-            <div className='prompt'>
-                {this.props.showAvatar && <div className='prompt-avatar' />}
+            <div
+                className="prompt"
+                onKeyPress={({ key }) => key === 'Enter' && this.login()}
+            >
+                {this.props.showAvatar && <div className="prompt-avatar" />}
 
-                {this.props.isOther ? (
-                    <input
-                        type='text'
-                        className='prompt-field'
-                        placeholder='Username'
-                    />
-                ) : (
-                    <div className='prompt-username'></div>
-                )}
+                <div className="prompt-username-wrapper">
+                    <FontAwesomeIcon icon={faCaretLeft} className="prompt-username-arrow" />
+                    <div className="prompt-username">{this.props.username}</div>
+                    <FontAwesomeIcon icon={faCaretRight} className="prompt-username-arrow" />
+                </div>
 
-                <input
-                    type='password'
-                    className='prompt-field'
-                    placeholder='Password'
-                />
+                <div className="prompt-fields">
+                    <div className="password">
+                        <input
+                            type="password"
+                            className="prompt-field"
+                            placeholder="Password"
+                        />
+
+                        <button
+                            className="login-button hover-button"
+                            onClick={() => this.login()}
+                        >
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
+                    </div>
+                </div>
             </div>
         )
     }
@@ -37,7 +53,6 @@ class Prompt extends React.Component {
 
 Prompt.propTypes = {
     username: PropTypes.string,
-    isOther: PropTypes.bool,
     showAvatar: PropTypes.bool
 }
 

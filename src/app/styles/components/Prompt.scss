@@ -15,12 +15,34 @@
     margin-bottom: 1rem;
 }
 
-.prompt-username {
+.prompt-fields {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+}
+
+.prompt-username-wrapper {
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
+}
+
+.prompt-username-arrow {
+    color: #ffffff88;
+}
+
+.prompt-username {
+    text-align: center;
+    color: white;
+    font-size: 1.25em;
+    margin: 0 1rem;
 }
 
 .prompt-field {
     width: 20rem;
+    height: 3rem;
+
+    padding: 0 1.5rem;
 
     border: none;
     outline: none;
@@ -30,8 +52,6 @@
     color: white;
     font-size: 1em;
     text-align: center;
-    
-    padding: .75rem 1.125rem;
 
     margin-bottom: 1rem;
 
@@ -42,4 +62,22 @@
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.password {
+    display: flex;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 3rem;
+    height: 3rem;
+
+    background-color: #ffffff22;
+    color: white;
+    border-radius: .33rem;
+    margin-left: 1rem;
 }

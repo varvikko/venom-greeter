@@ -31,7 +31,7 @@ class App extends React.Component {
                         })
                     }
                 />
-                <Prompt isOther={true} showAvatar={true} />
+                <Prompt username="Test User" showAvatar={true} />
                 <Menu open={this.state.menuOpen} blur={20} shadow={true} />
             </div>
         )
